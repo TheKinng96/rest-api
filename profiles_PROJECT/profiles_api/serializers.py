@@ -11,13 +11,13 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.UserProfile
-        fields = ('id', 'email', 'name', 'password')
+        fields = ('id', 'email', 'name', 'password') #tuples
         extra_kwargs = {
             'password': {
                 'write_only': True,
                 'style': {'input_type': 'password'}
             }
-        }
+        } #to make password can by updated
 
     def create(self, validated_data):
         """Create and return a new user"""
