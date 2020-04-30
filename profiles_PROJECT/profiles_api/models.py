@@ -58,11 +58,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
 
 class ProfileFeedItem(models.Model):
-    """Profile status update"""
-    user_profile = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
+    """Profile status update""" 
+    user_profile = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE) #ondelete tells django what to do when we delete the id
     status_text = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
 
